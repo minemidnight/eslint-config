@@ -82,7 +82,7 @@ module.exports = {
 		"no-alert": "error",
 		"no-array-constructor": "error",
 		"no-caller": "error",
-		"no-confusing-arrow": "error",
+		"no-confusing-arrow": ["error", { onlyOneSimpleParam: true }],
 		"no-delete-var": "error",
 		"no-empty": "error",
 		"no-empty-function": "error",
@@ -100,11 +100,6 @@ module.exports = {
 		"no-labels": "error",
 		"no-lone-blocks": "error",
 		"no-lonely-if": "error",
-		"no-magic-numbers": [
-			"warn", {
-				ignoreArrayIndexes: true, ignoreDefaultValues: true, enforceConst: true, detectObjects: false
-			}
-		],
 		"no-mixed-operators": "error",
 		"no-nested-ternary": "error",
 		"no-new": "error",
@@ -171,7 +166,6 @@ module.exports = {
 		"dot-location": ["error", "property"],
 		"eol-last": "error",
 		"func-call-spacing": ["error", "never"],
-		"function-call-argument-newline": ["error", "consistent"],
 		"function-paren-newline": ["error", "never"],
 		"implicit-arrow-linebreak": ["error", "beside"],
 		indent: ["error", "tab"],
@@ -193,7 +187,7 @@ module.exports = {
 		"multiline-ternary": ["error", "always-multiline"],
 		"new-parens": ["error", "always"],
 		"newline-per-chained-call": ["error", { ignoreChainWithDepth: 3 }],
-		"no-extra-parens": ["error", "all", { nestedBinaryExpressions: false }],
+		"no-extra-parens": ["error", "all", { nestedBinaryExpressions: false, enforceForArrowConditionals: false }],
 		"no-mixed-spaces-and-tabs": "error",
 		"no-multi-spaces": ["error", { ignoreEOLComments: true }],
 		"no-multiple-empty-lines": ["error", { max: 2, maxEOF: 1 }],
@@ -201,24 +195,18 @@ module.exports = {
 		"no-trailing-spaces": "error",
 		"no-whitespace-before-property": "error",
 		"nonblock-statement-body-position": ["error", "beside"],
-		"object-curly-newline": ["error", { multiline: true, minProperties: 3 }],
+		"object-curly-newline": ["error", { multiline: true, minProperties: 4 }],
 		"object-curly-spacing": ["error", "always"],
 		"object-property-newline": ["error", { allowAllPropertiesOnSameLine: true }],
 		"operator-linebreak": ["error", "after"],
 		"padded-blocks": ["error", "never"],
-		"padding-line-between-statements": [
-			"error", {
-				blankLine: "always", prev: ["const", "let", "var"], next: "*"
-			}, {
-				blankLine: "any", prev: ["const", "let", "var"], next: ["const", "let", "var"]
-			}
-		],
+		"padding-line-between-statements": ["error", { blankLine: "always", prev: ["const", "let", "var"], next: "*" }, { blankLine: "any", prev: ["const", "let", "var"], next: ["const", "let", "var"] }],
 		quotes: ["error", "double"],
 		"rest-spread-spacing": ["error", "never"],
 		semi: ["error", "always"],
 		"semi-style": ["error", "last"],
 		"space-before-blocks": ["error", "always"],
-		"space-before-function-paren": ["error", "never"],
+		"space-before-function-paren": ["error", { anonymous: "never", named: "never", asyncArrow: "always" }],
 		"space-in-parens": ["error", "never"],
 		"space-infix-ops": "error",
 		"switch-colon-spacing": ["error", { after: true, before: false }],
