@@ -3,9 +3,7 @@ module.exports = {
 		node: true,
 		es2022: true
 	},
-	parserOptions: {
-		sourceType: "module"
-	},
+	parserOptions: { sourceType: "module" },
 	rules: {
 		// potential logical errors
 		"array-callback-return": "error",
@@ -154,7 +152,6 @@ module.exports = {
 		// formatting & layout
 		"array-bracket-newline": ["error", { multiline: true }],
 		"array-bracket-spacing": ["error", "never"],
-		"array-element-newline": ["error", { minItems: 5 }],
 		"arrow-parens": ["error", "as-needed"],
 		"arrow-spacing": ["error", { before: true, after: true }],
 		"block-spacing": "error",
@@ -166,13 +163,14 @@ module.exports = {
 		"dot-location": ["error", "property"],
 		"eol-last": "error",
 		"func-call-spacing": ["error", "never"],
-		"function-paren-newline": ["error", "never"],
+		"function-paren-newline": ["error", "multiline"],
 		"implicit-arrow-linebreak": ["error", "beside"],
 		indent: ["error", "tab"],
 		"jsx-quotes": ["error", "prefer-double"],
 		"key-spacing": "error",
 		"keyword-spacing": [
-			"error", {
+			"error",
+			{
 				overrides: {
 					if: { after: false },
 					for: { after: false },
