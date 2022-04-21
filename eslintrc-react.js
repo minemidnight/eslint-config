@@ -159,7 +159,6 @@ module.exports = {
 		// formatting & layout
 		"array-bracket-newline": ["error", { multiline: true }],
 		"array-bracket-spacing": ["error", "never"],
-		"array-element-newline": ["error", { minItems: 5 }],
 		"arrow-parens": ["error", "as-needed"],
 		"arrow-spacing": ["error", { before: true, after: true }],
 		"block-spacing": "error",
@@ -171,13 +170,14 @@ module.exports = {
 		"dot-location": ["error", "property"],
 		"eol-last": "error",
 		"func-call-spacing": ["error", "never"],
-		"function-paren-newline": ["error", "never"],
+		"function-paren-newline": ["error", "multiline"],
 		"implicit-arrow-linebreak": ["error", "beside"],
 		indent: ["error", "tab"],
 		"jsx-quotes": ["error", "prefer-double"],
 		"key-spacing": "error",
 		"keyword-spacing": [
-			"error", {
+			"error",
+			{
 				overrides: {
 					if: { after: false },
 					for: { after: false },
@@ -211,7 +211,7 @@ module.exports = {
 		semi: ["error", "always"],
 		"semi-style": ["error", "last"],
 		"space-before-blocks": ["error", "always"],
-		"space-before-function-paren": ["error", "never"],
+		"space-before-function-paren": ["error", { anonymous: "never", named: "never", asyncArrow: "always" }],
 		"space-in-parens": ["error", "never"],
 		"space-infix-ops": "error",
 		"switch-colon-spacing": ["error", { after: true, before: false }],
